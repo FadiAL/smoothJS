@@ -1,6 +1,6 @@
 function Smooth(init, max){
-  self.max = max;
-  self.init = init;
+  this.max = max;
+  this.init = init;
   initializeTypes();
 }
 function initializeTypes(){
@@ -9,5 +9,5 @@ function initializeTypes(){
 Smooth.prototype.linear = function(frac){
   if(frac > 1)
 	  return this.max;
-  return frac*(self.max - self.init) + self.init;
+  return frac*(this.max - this.init) + this.init;
 }
