@@ -7,8 +7,7 @@ function initializeTypes(){
     //TODO:Add other interpolation input types
 }
 Smooth.prototype.linear = function(frac){
-    if(frac > 1){
-	return this.max;
-    }
+    if(frac > 1)
+	   return this.max;
     return frac*(this.max - this.init) + this.init;
 }
