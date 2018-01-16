@@ -22,3 +22,9 @@ Smooth.prototype.quintic = function(frac){
   return (Math.pow(frac, 5)*6 - Math.pow(frac, 4)*15 + Math.pow(frac, 3)*10)*
           (this.max-this.init)+this.init;
 }
+Smooth.prototype.septic = function(frac){
+  if(frac > 1)
+    return this.max;
+  return (Math.pow(frac, 7)*-20 + Math.pow(frac, 6)*70 - Math.pow(frac, 5)*84 +
+          Math.pow(frac, 4)*35)*(this.max-this.init)+this.init;
+}
