@@ -1,4 +1,35 @@
-var testVar = new Smooth(500, 1000);
-for(var i = 0; i < 1; i+=0.1){
-    console.log(testVar.linear(i));
+var lin = document.querySelector("#linear");
+var cub = document.querySelector("#cubic");
+var qui = document.querySelector("#quintic");
+var sep = document.querySelector("#septic");
+animateMotion(lin, "linear", 3000);
+animateMotion(cub, "cubic", 3000);
+animateMotion(qui, "quintic", 3000);
+animateMotion(sep, "septic", 3000);
+
+function animateMotion(elem, type, animTime){
+  var move = new Smooth(0, 700);
+  function anim(curTime){
+    var factor = curTime/animTime;
+    var delta;
+    switch (type){
+      case "linear":
+        delta = move.linear(factor) + "px";
+        break;
+      case "cubic":
+        delta = move.cubic(factor) +"px";
+        break;
+      case "quintic":
+        delta = move.quintic(factor) + "px";
+        break;
+      case "septic":
+        delta = move.septic(factor) + "px";
+        break;
+    }
+    elem.style.left = delta
+    if(curTime >= animTime)
+      return;
+    requestAnimationFrame(anim);
+  }
+  requestAnimationFrame(anim);
 }
