@@ -1,9 +1,11 @@
 var lin = document.querySelector("#linear");
 var cub = document.querySelector("#cubic");
 var qui = document.querySelector("#quintic");
+var sep = document.querySelector("#septic");
 animateMotion(lin, "linear", 3000);
 animateMotion(cub, "cubic", 3000);
 animateMotion(qui, "quintic", 3000);
+animateMotion(sep, "septic", 3000);
 
 function animateMotion(elem, type, animTime){
   var move = new Smooth(0, 700);
@@ -18,7 +20,10 @@ function animateMotion(elem, type, animTime){
         delta = move.cubic(factor) +"px";
         break;
       case "quintic":
-        delta = move.quintic(factor) + "px";;
+        delta = move.quintic(factor) + "px";
+        break;
+      case "septic":
+        delta = move.septic(factor) + "px";
         break;
     }
     elem.style.left = delta
