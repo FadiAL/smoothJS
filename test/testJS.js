@@ -1,14 +1,16 @@
+var DURATION = 3000;
+var DISTANCE = 1000;
 var lin = document.querySelector("#linear");
 var cub = document.querySelector("#cubic");
 var qui = document.querySelector("#quintic");
 var sep = document.querySelector("#septic");
-animateMotion(lin, "linear", 3000);
-animateMotion(cub, "cubic", 3000);
-animateMotion(qui, "quintic", 3000);
-animateMotion(sep, "septic", 3000);
+animateMotion(lin, "linear", DURATION);
+animateMotion(cub, "cubic", DURATION);
+animateMotion(qui, "quintic", DURATION);
+animateMotion(sep, "septic", DURATION);
 
 function animateMotion(elem, type, animTime){
-  var move = new Smooth(0, 700);
+  var move = new Smooth(0, DISTANCE);
   function anim(curTime){
     var factor = curTime/animTime;
     var delta;
