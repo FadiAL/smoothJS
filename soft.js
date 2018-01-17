@@ -4,7 +4,10 @@ function Smooth(init, max){
   initializeTypes();
 }
 function initializeTypes(){
-  //TODO:Add other interpolation input types
+  Smooth.LINEAR = "linear";
+  Smooth.CUBIC = "cubic";
+  Smooth.QUINTIC = "quintic";
+  Smooth.SEPTIC = "septic";
 }
 Smooth.prototype.linear = function(frac){
   if(frac > 1)
