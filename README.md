@@ -1,4 +1,4 @@
-# softJS
+# smoothJS
 A small library with functions to smooth variable transitions
 
 How to Use:
